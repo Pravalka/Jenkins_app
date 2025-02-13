@@ -18,7 +18,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build --no-cache -t ${IMAGE_NAME} ."
+                    sh 'docker build --no-cache -t ${IMAGE_NAME} .'
                 }
             }
         }
@@ -27,6 +27,7 @@ pipeline {
             steps {
                 script {
                     sh "docker run -d --name ${CONTAINER_NAME} -p ${PORT}:80 ${IMAGE_NAME}"
+                    
                     sleep 10  // Allow time for the container to start
                 }
             }
