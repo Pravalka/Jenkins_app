@@ -32,13 +32,13 @@ pipeline {
             }
         }
 
-        // stage('Run Tests') {
-        //     steps {
-        //         script {
-        //             sh "robot -d results login_test.robot"
-        //         }
-        //     }
-        // }
+        stage('Run Tests') {
+            steps {
+                script {
+                    sh "robot -d results login_test.robot"
+                }
+            }
+        }
 
         stage('Push Image to Docker Hub') {
             steps {
