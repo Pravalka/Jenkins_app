@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-project
+spec:
+  replicas: 2  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: app-project
+  template:
+    metadata:
+      labels:
+        app: app-project
+    spec:
+      containers:
+      - name: app-project
+        image: pravalika964/pjt  
+        ports:
+        - containerPort: 80
+
