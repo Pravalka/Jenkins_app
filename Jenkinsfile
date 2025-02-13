@@ -8,7 +8,13 @@ pipeline {
     }
 
     stages {
-
+        stage('Stop and Remove Old Container'){
+            steps{
+                echo 'Stopping and removing old container (if exists)...'
+                    sh 'docker stop ${CONTAINER_NAME} || true'
+                    sh 'docker rm ${CONTAINER_NAME} || true'
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 script {
