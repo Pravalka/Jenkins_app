@@ -35,7 +35,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    sh "robot -d results login_test.robot"
+                    sh "robot -d results test.robot"
                 }
             }
         }
