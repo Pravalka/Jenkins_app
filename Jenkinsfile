@@ -60,12 +60,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            archiveArtifacts artifacts: 'results/*', fingerprint: true
-        }
-        failure {
-            echo "Tests failed! Check the logs."
-        }
-    }
+    
 }
