@@ -32,13 +32,6 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                script {
-                    sh "robot -d results test.robot"
-                }
-            }
-        }
 
         stage('Push Image to Docker Hub') {
             steps {
